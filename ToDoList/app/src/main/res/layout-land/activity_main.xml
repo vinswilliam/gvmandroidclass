@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gvm.todolist.MainActivity">
+
+    <fragment
+        android:name="com.gvm.todolist.ItemsFragment"
+        android:id="@+id/container_list_todo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7" />
+
+    <fragment
+        android:name="com.gvm.todolist.ItemDetailFragment"
+        android:id="@+id/container_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3">
+
+    </fragment>
+
+</LinearLayout>
