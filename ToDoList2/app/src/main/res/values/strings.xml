@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ToDoList</string>
+    <string name="preview_todo">Bacon ipsum dolor amet sausage alcatra t-bone ball tip jowl tenderloin buffalo pastrami pig turducken short loin ham prosciutto tail. Kielbasa pastrami shoulder porchetta swine, jowl sausage pork strip steak prosciutto buffalo doner. Beef ribs ball tip andouille ham bresaola cow pastrami, picanha sausage chicken short loin pork loin. Sirloin jerky flank shoulder.</string>
+    <string name="preview_title_todo">Title todo list</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="start_date">Start Date</string>
+    <string name="finish_date">Finish Date</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="save">Save</string>
+    <string name="deadline">Deadline: %s</string>
+    <string name="startDate">Start: %s</string>
+</resources>
