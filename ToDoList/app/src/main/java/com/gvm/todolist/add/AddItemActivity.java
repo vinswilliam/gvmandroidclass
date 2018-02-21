@@ -1,4 +1,4 @@
-package com.gvm.todolist;
+package com.gvm.todolist.add;
 
 
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+
+import com.gvm.todolist.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

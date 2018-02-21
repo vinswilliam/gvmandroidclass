@@ -1,10 +1,13 @@
-package com.gvm.todolist;
+package com.gvm.todolist.model;
 
 
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 import java.util.Date;
 
+@Parcel(Parcel.Serialization.BEAN)
 public class ItemModel {
 
     private Long id;

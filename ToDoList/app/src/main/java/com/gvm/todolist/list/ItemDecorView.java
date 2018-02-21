@@ -1,8 +1,10 @@
-package com.gvm.todolist;
+package com.gvm.todolist.list;
 
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.gvm.todolist.R;
 
 
 public class ItemDecorView extends RecyclerView.ItemDecoration {
