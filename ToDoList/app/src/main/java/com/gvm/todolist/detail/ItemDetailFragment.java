@@ -43,6 +43,10 @@ public class ItemDetailFragment extends Fragment {
         return fragment;
     }
 
+    public ItemDetailFragment() {
+
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

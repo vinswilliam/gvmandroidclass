@@ -10,7 +10,9 @@ import com.google.gson.reflect.TypeToken;
 import com.gvm.todolist.R;
 import com.gvm.todolist.model.ItemModel;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;

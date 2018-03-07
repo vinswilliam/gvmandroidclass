@@ -84,14 +84,16 @@ public class ItemsFragment extends Fragment implements ITodoListListener {
     private void showDetails(int position) {
         mCurCheckPosition = position;
         if (mDualPane) {
-            ItemDetailFragment detail = ItemDetailFragment.newInstance(mItemAdapter.getItem(position));
+            ItemDetailFragment detail = ItemDetailFragment.newInstance(
+                    mItemAdapter.getItem(position));
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.container_detail, detail);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
 
         } else {
-            startActivity(ItemDetailActivity.newActivity(getContext(), mItemAdapter.getItem(position)));
+            startActivity(ItemDetailActivity.newActivity(getContext(),
+                    mItemAdapter.getItem(position)));
         }
     }
 
