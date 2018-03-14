@@ -1,6 +1,5 @@
 package com.gvm.androidclass3_activityfragment;
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
