@@ -68,13 +68,18 @@ public class FirstFragment extends Fragment {
 
     @OnClick(R.id.btn_first_fragment)
     void onClickFirstFragment() {
-//        mListener.onClickBtnInFragment((new Random()).nextInt());
         mListener.onFinishActivity();
     }
 
+    @OnClick(R.id.btn_generate_random_value)
+    void onClickGenerateRandomValue() {
+        mListener.onGenerateRandomValue((new Random()).nextInt());
+    }
+
     public interface IFirstFragmentListener {
-        void onClickBtnInFragment(int value);
         void onFinishActivity();
+
+        void onGenerateRandomValue(int value);
     }
 
 }

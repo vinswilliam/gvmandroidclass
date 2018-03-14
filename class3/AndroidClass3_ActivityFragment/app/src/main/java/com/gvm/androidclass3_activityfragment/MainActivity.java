@@ -14,15 +14,16 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity
     implements FirstFragment.IFirstFragmentListener {
 
-    @Override
-    public void onClickBtnInFragment(int value) {
-        Log.d("william",
-                "value from fragment: " + value);
-    }
+    private SecondFragment secondFragment;
 
     @Override
     public void onFinishActivity() {
         finish();
+    }
+
+    @Override
+    public void onGenerateRandomValue(int value) {
+        secondFragment.showGenerateRandomNumber(value);
     }
 
     @Override
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity
         ButterKnife.bind(this);
 
         bindingFirstFragment();
+        bindingSecondFragment();
     }
 
     private void bindingFirstFragment() {
@@ -40,12 +42,30 @@ public class MainActivity extends AppCompatActivity
         if (firstFragment == null) {
             firstFragment = FirstFragment.newInstance("Hai");
         }
-        getFragmentManager()
-                .beginTransaction()
-                .add(R.id.container_first_fragment,
-                        firstFragment,
-                        "FIRST_FRAGMENT")
-                .commit();
+        if (!firstFragment.isAdded()) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.container_first_fragment,
+                            firstFragment,
+                            "FIRST_FRAGMENT")
+                    .commit();
+        }
+    }
+
+    private void bindingSecondFragment() {
+        secondFragment = (SecondFragment) getFragmentManager()
+                .findFragmentByTag("SECOND_FRAGMENT");
+        if (secondFragment == null) {
+            secondFragment = SecondFragment.newInstance();
+        }
+        if (!secondFragment.isAdded()) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.container_second_fragment,
+                            secondFragment,
+                            "SECOND_FRAGMENT")
+                    .commit();
+        }
     }
 
     @OnClick(R.id.btnNext)
