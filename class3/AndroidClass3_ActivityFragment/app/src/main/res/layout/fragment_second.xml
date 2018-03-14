@@ -6,6 +6,12 @@
     android:orientation="vertical">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SecondFragment"
+        android:padding="16dp"/>
+
+    <TextView
         android:id="@+id/tv_rand_gen_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
