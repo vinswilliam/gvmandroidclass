@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ControllerCallback {
+public class MainActivity extends AppCompatActivity
+        implements ControllerCallback {
 
     TextView tvLog;
     Button btnLog;
@@ -24,17 +25,11 @@ public class MainActivity extends AppCompatActivity implements ControllerCallbac
         controller = new Controller(this);
 
         btnLog.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-                showLog();
+                controller.start();
             }
         });
-
-    }
-
-    private void showLog() {
-        controller.start();
     }
 
     @Override

@@ -1,8 +1,13 @@
 package com.gvm.retrofittutorial;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Change {
 
-    String subject;
+    private String subject;
+
+    @SerializedName("title_page")
+    private String titlePage;
 
     public String getSubject() {
         return subject;

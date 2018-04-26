@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-
+//singleton class
 public class GroceriesDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "WILLIAM";

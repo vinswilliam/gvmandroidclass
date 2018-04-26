@@ -10,5 +10,4 @@ public interface GerritAPI {
 
     @GET("changes/")
     Call<List<Change>> loadChanges(@Query("q") String status);
-
 }

@@ -4,7 +4,6 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,12 +50,15 @@ public class Controller implements Callback<List<Change>> {
         if (response.isSuccessful()) {
             List<Change> changeList = response.body();
             mCallback.onSuccess(changeList);
-            for(Change change : changeList) {
-                Log.d("xyz", "subject: " + change.subject);
-            }
         } else {
             mCallback.onError(getErrorMsg(response.errorBody()));
         }
+    }
+
+    @Override
+    public void onFailure(Call<List<Change>> call, Throwable t) {
+        t.printStackTrace();
+        mCallback.onError(t.getMessage());
     }
 
     private String getErrorMsg(ResponseBody responseBody) {
@@ -69,13 +71,7 @@ public class Controller implements Callback<List<Change>> {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return errorMsg;
     }
 
-    @Override
-    public void onFailure(Call<List<Change>> call, Throwable t) {
-        t.printStackTrace();
-        mCallback.onError(t.getMessage());
-    }
 }

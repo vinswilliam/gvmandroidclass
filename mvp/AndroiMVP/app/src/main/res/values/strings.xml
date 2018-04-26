@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MVP Android</string>
+    <string name="hint_username">username</string>
+    <string name="hint_password">password</string>
+    <string name="login">Login</string>
+    <string name="username_too_short">username too short</string>
+    <string name="pwd_too_short">password too short</string>
+    <string name="login_success">Login Success!</string>
+</resources>
