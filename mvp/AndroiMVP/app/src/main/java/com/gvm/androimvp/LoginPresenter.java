@@ -1,17 +1,11 @@
 package com.gvm.androimvp;
 
-import android.os.Handler;
-
-import org.jetbrains.annotations.NotNull;
-
-public class LoginPresenter
-        implements IMVPLoginPresenter {
+public class LoginPresenter implements IMVPLoginPresenter {
 
     private IMVPLoginView mView;
-    private Consumer mConsumer = new Consumer();
 
     @Override
-    public void onAttach(@NotNull IMVPLoginView view) {
+    public void onAttach(IMVPLoginView view) {
         mView = view;
     }
 
@@ -21,23 +15,28 @@ public class LoginPresenter
     }
 
     @Override
-    public void onLogin(@NotNull String username,
-                        @NotNull String password) {
+    public void onLogin(String username, String password) {
+        Consumer mConsumer = new Consumer();
         mConsumer.setUsername(username);
         mConsumer.setPassword(password);
 
         mView.showLoginIndicator();
         mView.disableLoginBtn();
-        new Handler().postDelayed(() -> {
-            if (mConsumer.getUsername().length() < 6) {
-                mView.showUsernameTooShort();
-            } else if (mConsumer.getPassword().length() < 6) {
-                mView.showPasswordTooShort();
-            } else {
-                mView.showLoginSuccess();
-            }
-            mView.showHideIndicator();
-            mView.enableLoginBtn();
-        },2000);
+
+        if (mConsumer.getUsername().length() < 6
+                && mConsumer.getUsername().length() > 0) {
+            mView.showUsernameTooShort();
+        } else if (mConsumer.getPassword().length() < 6
+                && mConsumer.getPassword().length() > 0) {
+            mView.showPasswordTooShort();
+        } else if (mConsumer.getUsername().length() > 0
+                && mConsumer.getPassword().length() > 0){
+            mView.showLoginSuccess();
+        } else {
+            mView.showWarningEmptyUsernameAndPassword();
+        }
+
+        mView.hideIndicator();
+        mView.enableLoginBtn();
     }
 }

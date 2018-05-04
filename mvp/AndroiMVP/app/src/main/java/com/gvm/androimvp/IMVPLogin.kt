@@ -3,12 +3,13 @@ package com.gvm.androimvp
 
 interface IMVPLoginView {
     fun showLoginIndicator()
-    fun showHideIndicator()
+    fun hideIndicator()
     fun enableLoginBtn()
     fun disableLoginBtn()
     fun showUsernameTooShort()
     fun showPasswordTooShort()
     fun showLoginSuccess()
+    fun showWarningEmptyUsernameAndPassword()
 }
 
 interface IMVPLoginPresenter {

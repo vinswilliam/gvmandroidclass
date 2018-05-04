@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity
     }
 
     @Override
-    public void showHideIndicator() {
+    public void hideIndicator() {
         loginProgress.hide();
     }
 
@@ -83,5 +83,13 @@ public class LoginActivity extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
         mPresenter.onDetach();
+    }
+
+    @Override
+    public void showWarningEmptyUsernameAndPassword() {
+        Snackbar.make(
+                findViewById(android.R.id.content),
+                getString(R.string.empty_username_or_password),
+                Snackbar.LENGTH_SHORT).show();
     }
 }
